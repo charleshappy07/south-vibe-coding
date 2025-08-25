@@ -5,6 +5,8 @@ import southVibeLogo from "@/assets/south-vibe-logo.png";
 const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-hero opacity-90" />
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0">

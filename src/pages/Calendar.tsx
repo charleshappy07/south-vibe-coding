@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar as CalendarIcon, Clock, MapPin, ExternalLink, Users, Code, Presentation } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, MapPin, ExternalLink, Presentation } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -100,22 +100,6 @@ const Calendar = () => {
     }
   ];
 
-  const specialEvents = [
-    {
-      date: "2024-09-28",
-      dateFormatted: "Saturday, September 28",
-      title: "Local Hackathon Field Trip",
-      description: "Optional weekend event to see coding in action",
-      type: "Field Trip"
-    },
-    {
-      date: "2024-10-15",
-      dateFormatted: "Tuesday, October 15",
-      title: "Guest Speaker: UX Designer",
-      description: "Industry professional shares design insights",
-      type: "Guest Speaker"
-    }
-  ];
 
   const getStatusColor = (status: string, special?: boolean) => {
     if (special) return "bg-gradient-accent text-white";
@@ -204,51 +188,6 @@ const Calendar = () => {
           </div>
         </section>
 
-        {/* Special Events */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <Users className="h-8 w-8 text-primary" />
-            Special Events
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {specialEvents.map((event, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    {event.title}
-                    <Badge variant="outline">{event.type}</Badge>
-                  </CardTitle>
-                  <CardDescription>{event.dateFormatted}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{event.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Office Hours */}
-        <section className="mb-12">
-          <Card className="bg-secondary/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Code className="h-6 w-6 text-primary" />
-                Office Hours
-              </CardTitle>
-              <CardDescription>
-                Need extra help? Drop by for one-on-one coding support.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <p><strong>When:</strong> Tuesdays, 3:00–3:30 PM</p>
-                <p><strong>Where:</strong> Room 145 (Ms. Handler's classroom) (same as club meetings)</p>
-                <p><strong>What to bring:</strong> Your project, questions, and device</p>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
 
         {/* Important Dates Summary */}
         <section className="text-center bg-secondary/20 rounded-lg p-8">

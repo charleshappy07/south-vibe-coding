@@ -55,12 +55,12 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10" asChild>
+            <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
               <Link to="/projects">
                 See Projects
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10" asChild>
+            <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
               <Link to="/vibe">
                 What is Vibe Coding?
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 const Calendar = () => {
   const sessions = [
     {
-      date: "2024-09-05",
-      dateFormatted: "Thursday, September 5",
+      date: "2024-08-27",
+      dateFormatted: "Wednesday, August 27",
       week: 1,
       topic: "The Vibe of Coding",
       deliverable: "First prototype website via Lovable",
@@ -17,8 +17,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-09-12",
-      dateFormatted: "Thursday, September 12",
+      date: "2024-09-03",
+      dateFormatted: "Wednesday, September 3",
       week: 2,
       topic: "Words → Web",
       deliverable: "Personal portfolio page live",
@@ -26,8 +26,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-09-19",
-      dateFormatted: "Thursday, September 19",
+      date: "2024-09-10",
+      dateFormatted: "Wednesday, September 10",
       week: 3,
       topic: "Interactive Art",
       deliverable: "p5.js 'vibe sketch' reacting to mouse/keys",
@@ -35,8 +35,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-09-26",
-      dateFormatted: "Thursday, September 26",
+      date: "2024-09-17",
+      dateFormatted: "Wednesday, September 17",
       week: 4,
       topic: "Make a Mini-Game",
       deliverable: "Playable JS mini-game with score/lives",
@@ -44,8 +44,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-10-03",
-      dateFormatted: "Thursday, October 3",
+      date: "2024-09-24",
+      dateFormatted: "Wednesday, September 24",
       week: 5,
       topic: "Story & Choices",
       deliverable: "Interactive story with branches",
@@ -53,8 +53,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-10-10",
-      dateFormatted: "Thursday, October 10",
+      date: "2024-10-01",
+      dateFormatted: "Wednesday, October 1",
       week: 6,
       topic: "Build a Tool",
       deliverable: "Utility app (e.g., grade calculator, planner)",
@@ -62,8 +62,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-10-17",
-      dateFormatted: "Thursday, October 17",
+      date: "2024-10-08",
+      dateFormatted: "Wednesday, October 8",
       week: 7,
       topic: "Level Up with AI IDEs",
       deliverable: "Improved feature set & bug fixes",
@@ -71,8 +71,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-10-24",
-      dateFormatted: "Thursday, October 24",
+      date: "2024-10-15",
+      dateFormatted: "Wednesday, October 15",
       week: 8,
       topic: "Project Sprint I",
       deliverable: "Final project scaffold (your choice)",
@@ -80,8 +80,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-10-31",
-      dateFormatted: "Thursday, October 31",
+      date: "2024-10-22",
+      dateFormatted: "Wednesday, October 22",
       week: 9,
       topic: "Project Sprint II",
       deliverable: "Near-final build + design polish",
@@ -89,8 +89,8 @@ const Calendar = () => {
       status: "upcoming"
     },
     {
-      date: "2024-11-07",
-      dateFormatted: "Thursday, November 7",
+      date: "2024-10-29",
+      dateFormatted: "Wednesday, October 29",
       week: 10,
       topic: "Demo Day",
       deliverable: "2–3 minute live demo + 60-sec video",
@@ -121,7 +121,7 @@ const Calendar = () => {
             Club Calendar
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Our 10-week journey from first prototype to demo day. Every Thursday brings new skills and projects.
+            Our 10-week journey from first prototype to demo day. Every Wednesday brings new skills and projects.
           </p>
           
           {/* Quick Info */}
@@ -195,15 +195,15 @@ const Calendar = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div>
               <h3 className="font-semibold mb-2">First Meeting</h3>
-              <p className="text-muted-foreground">Thursday, September 5</p>
+              <p className="text-muted-foreground">Wednesday, August 27</p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Mid-Semester Check</h3>
-              <p className="text-muted-foreground">Thursday, October 3</p>
+              <p className="text-muted-foreground">Wednesday, September 24</p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Demo Day</h3>
-              <p className="text-muted-foreground">Thursday, November 7</p>
+              <p className="text-muted-foreground">Wednesday, October 29</p>
             </div>
           </div>
           <div className="mt-6">

@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, MapPin, Clock, Phone, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -195,23 +195,6 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Phone className="h-6 w-6 text-primary" />
-                  School Main Office
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-2">
-                  For general school inquiries or to reach the club advisor during school hours.
-                </p>
-                <p className="font-medium">(954) 123-4567</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Available: Monday-Friday, 7:30 AM - 4:00 PM
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
 

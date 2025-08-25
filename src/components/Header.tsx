@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import southVibeLogo from "@/assets/south-vibe-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -19,6 +20,23 @@ const Header = () => {
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" }
   ];
+
+  const handleNavClick = (item: typeof navigation[0], e: React.MouseEvent) => {
+    // Special handling for Program navigation
+    if (item.name === "Program") {
+      if (location.pathname === "/program") {
+        e.preventDefault();
+        // Smooth scroll to #weeks section
+        const weeksSection = document.getElementById('weeks');
+        if (weeksSection) {
+          weeksSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    
+    // Close mobile menu after navigation
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -42,7 +60,14 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200"
+                onClick={(e) => handleNavClick(item, e)}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  location.pathname === item.href
+                    ? "text-primary bg-secondary/50"
+                    : "text-foreground hover:text-primary hover:bg-secondary/50"
+                }`}
+                aria-current={location.pathname === item.href ? "page" : undefined}
+                aria-label={item.name === "Program" ? "Navigate to Program" : undefined}
               >
                 {item.name}
               </Link>
@@ -77,8 +102,14 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleNavClick(item, e)}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                    location.pathname === item.href
+                      ? "text-primary bg-secondary/50"
+                      : "text-foreground hover:text-primary hover:bg-secondary/50"
+                  }`}
+                  aria-current={location.pathname === item.href ? "page" : undefined}
+                  aria-label={item.name === "Program" ? "Navigate to Program" : undefined}
                 >
                   {item.name}
                 </Link>

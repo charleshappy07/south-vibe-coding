@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Palette, Zap } from "lucide-react";
-import southVibeLogo from "/lovable-uploads/813480c6-254f-4b30-81b4-aa3db8ce4ade.png";
+import southVibeLogo from "@/assets/south-vibe-logo.png";
 
 const Hero = () => {
   return (

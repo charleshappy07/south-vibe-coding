@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Palette, Zap } from "lucide-react";
+import { ArrowRight, Code, Palette } from "lucide-react";
 import { Link } from "react-router-dom";
 import southVibeLogo from "@/assets/south-vibe-logo.png";
 
@@ -37,18 +37,14 @@ const Hero = () => {
 
           {/* Feature Pills */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+            <Link to="/tools" className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 hover-scale cursor-pointer">
               <Code className="h-4 w-4 text-vibe-gold" />
               <span className="text-sm text-white">AI + Code Together</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+            </Link>
+            <Link to="/tools" className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 hover-scale cursor-pointer">
               <Palette className="h-4 w-4 text-cyber-blue" />
               <span className="text-sm text-white">Make It Yours</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-              <Zap className="h-4 w-4 text-neon-green" />
-              <span className="text-sm text-white">Ship Fast</span>
-            </div>
+            </Link>
           </div>
 
           {/* CTA Buttons */}

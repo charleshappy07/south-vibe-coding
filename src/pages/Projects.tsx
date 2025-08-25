@@ -13,15 +13,15 @@ import Footer from "@/components/Footer";
 const mockProjects = [
   {
     id: 1,
-    title: "Planet Hopper Game",
-    blurb: "Jump between planets in this physics-based adventure game with power-ups and scoring.",
+    title: "AI Dungeon",
+    blurb: "A single-player/multiplayer text adventure game which uses artificial intelligence to generate content and allows players to create and share adventures and custom prompts.",
     category: "Game",
     tools: ["p5.js", "Replit"],
-    author: "Maya",
-    grade: "11th",
-    image: "https://images.unsplash.com/photo-1614680376739-414d95ff43df?w=400&h=300&fit=crop",
-    demoUrl: "#",
-    slug: "planet-hopper-game"
+    author: "Nick Walton",
+    grade: "",
+    image: "/lovable-uploads/ef5dd870-52c4-4819-beb3-d3b0247f2508.png",
+    demoUrl: "https://aidungeon.com",
+    slug: "ai-dungeon"
   },
   {
     id: 2,
@@ -247,12 +247,14 @@ const Projects = () => {
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-muted-foreground">
-                          {project.author}, {project.grade}
+                          By: {project.author}{project.grade && `, ${project.grade}`}
                         </span>
                         <div className="flex gap-2">
-                          <Button size="sm" variant="outline" asChild>
-                            <Link to={`/projects/${project.slug}`}>Learn More</Link>
-                          </Button>
+                          {project.id !== 1 && (
+                            <Button size="sm" variant="outline" asChild>
+                              <Link to={`/projects/${project.slug}`}>Learn More</Link>
+                            </Button>
+                          )}
                           <Button size="sm" asChild>
                             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="h-4 w-4 mr-1" />

@@ -175,21 +175,6 @@ const Resources = () => {
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="text-center bg-secondary/20 rounded-lg p-8">
-          <h2 className="text-2xl font-bold mb-4">Ready to Start Building?</h2>
-          <p className="text-muted-foreground mb-6">
-            Join the club and get access to all these resources plus weekly mentorship.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/join#signup">Join the Club</Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/tools">Explore Tools</Link>
-            </Button>
-          </div>
-        </section>
       </main>
 
       <Footer />

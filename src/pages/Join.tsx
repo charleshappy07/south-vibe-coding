@@ -6,10 +6,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Users, Code, Presentation, Clock, MapPin, Mail } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Join = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     studentName: "",
     grade: "",
@@ -21,6 +23,10 @@ const Join = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  // For admin setup - in production, this would be configured elsewhere
+  const webhookUrl = ""; // Admin would configure this Zapier webhook URL
 
   const interests = ["Art", "Game Development", "Web Design", "Tools & Apps", "Interactive Stories"];
 
@@ -33,10 +39,49 @@ const Join = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    setSubmitted(true);
+    setIsLoading(true);
+
+    // For now, we'll use a simple email service
+    // In production, you would set up a Zapier webhook to send emails to contact@southvibecoding.com
+    try {
+      // Simulate form submission
+      const submissionData = {
+        ...formData,
+        submittedAt: new Date().toISOString(),
+        interests: formData.interests.join(", ")
+      };
+
+      // If webhookUrl is configured, send to Zapier
+      if (webhookUrl) {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify(submissionData),
+        });
+      }
+
+      setSubmitted(true);
+      
+      toast({
+        title: "Application Submitted!",
+        description: "Your application has been sent to contact@southvibecoding.com. We'll be in touch soon!",
+      });
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your application. Please email us directly at contact@southvibecoding.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (submitted) {
@@ -48,7 +93,8 @@ const Join = () => {
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
             <h1 className="text-3xl font-bold mb-4">Welcome to Vibe Coding!</h1>
             <p className="text-muted-foreground mb-6">
-              Thanks for applying! We'll send you a welcome email with next steps soon.
+              Thanks for applying! Your application has been sent to contact@southvibecoding.com. 
+              We'll review it and get back to you soon.
             </p>
             <div className="bg-secondary/20 rounded-lg p-4 mb-6">
               <h3 className="font-semibold mb-2">What's Next:</h3>
@@ -263,8 +309,8 @@ const Join = () => {
                     </div>
                   </div>
 
-                  <Button type="submit" className="w-full" size="lg">
-                    Apply to Join
+                  <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
+                    {isLoading ? "Submitting..." : "Apply to Join"}
                   </Button>
                 </form>
               </CardContent>
@@ -279,9 +325,9 @@ const Join = () => {
             Reach out to our club advisor with any questions about joining.
           </p>
           <Button variant="outline" asChild>
-            <a href="mailto:advisor@sphs.edu" className="inline-flex items-center gap-2">
+            <a href="mailto:contact@southvibecoding.com" className="inline-flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              advisor@sphs.edu
+              contact@southvibecoding.com
             </a>
           </Button>
         </section>

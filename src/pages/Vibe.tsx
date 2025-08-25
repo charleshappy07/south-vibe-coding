@@ -346,30 +346,6 @@ const Vibe = () => {
         </div>
       </section>
 
-      {/* CTA Strip */}
-      <section id="join" className="py-16 px-4 bg-gradient-to-r from-primary/10 to-secondary/10">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to start building?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Join a community where creativity meets technology
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild onClick={() => handleAnalyticsEvent('cta_click', 'Join the Club')}>
-              <Link to="/join#signup">
-                Join the Club
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild onClick={() => handleAnalyticsEvent('cta_click', 'Try a Starter')}>
-              <Link to="/resources#starters">
-                Try a Starter
-                <Zap className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

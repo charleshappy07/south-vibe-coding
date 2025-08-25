@@ -12,17 +12,11 @@ const Footer = () => {
     { name: "Tools", href: "/tools" }
   ];
 
-  const parentLinks = [
-    { name: "Parent Info", href: "/parents" },
-    { name: "Safety & Guidelines", href: "/about#safety" },
-    { name: "Code of Conduct", href: "/conduct" },
-    { name: "Contact Advisor", href: "/contact" }
-  ];
 
   return (
     <footer className="bg-gradient-hero text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Club Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4">South Vibe Coding Club</h3>
@@ -59,22 +53,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Parent Resources */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">For Parents</h3>
-            <ul className="space-y-2">
-              {parentLinks.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    to={link.href}
-                    className="text-sm text-white/80 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
         </div>
 

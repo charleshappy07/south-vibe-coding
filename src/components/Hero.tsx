@@ -1,0 +1,77 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Code, Palette, Zap } from "lucide-react";
+
+const Hero = () => {
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-hero opacity-90" />
+      
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-4 h-4 bg-vibe-gold rounded-full animate-float opacity-60" />
+        <div className="absolute top-40 right-20 w-6 h-6 bg-cyber-blue rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-vibe-gold rounded-full animate-float opacity-50" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-10 w-5 h-5 bg-neon-green rounded-full animate-float opacity-30" style={{ animationDelay: '3s' }} />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="animate-slide-up">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+            <Zap className="h-4 w-4 text-vibe-gold" />
+            <span className="text-sm font-medium text-white">South Plantation High School</span>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Create with your
+            <span className="block bg-gradient-accent bg-clip-text text-transparent animate-glow">
+              words.
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Vibe Coding turns ideas into games, websites, and tools — fast.
+          </p>
+
+          {/* Feature Pills */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+              <Code className="h-4 w-4 text-vibe-gold" />
+              <span className="text-sm text-white">AI + Code Together</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+              <Palette className="h-4 w-4 text-cyber-blue" />
+              <span className="text-sm text-white">Make It Yours</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+              <Zap className="h-4 w-4 text-neon-green" />
+              <span className="text-sm text-white">Ship Fast</span>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+              Join the Club
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10">
+              See Projects
+            </Button>
+          </div>
+
+          {/* Meeting Info */}
+          <div className="mt-12 text-white/80">
+            <p className="text-lg font-semibold">Next Meeting</p>
+            <p className="text-sm">Thursdays, 3:00–4:00 PM • Room TBD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

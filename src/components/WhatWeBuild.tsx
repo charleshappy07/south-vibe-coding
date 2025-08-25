@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Gamepad2, Globe, Wrench, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const WhatWeBuild = () => {
   const projects = [
@@ -48,48 +49,51 @@ const WhatWeBuild = () => {
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {projects.map((project, index) => (
-            <Card 
-              key={index}
-              className="group relative overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
-              
-              <div className="relative p-6">
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-br ${project.color} text-white group-hover:scale-110 transition-transform duration-300`}>
-                    <project.icon className="h-6 w-6" />
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
+            <Link key={index} to="/tools" className="block">
+              <Card 
+                className="group relative overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow animate-slide-up cursor-pointer h-full"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
+                
+                <div className="relative p-6">
+                  <div className="flex items-start gap-4">
+                    <div className={`p-3 rounded-lg bg-gradient-to-br ${project.color} text-white group-hover:scale-110 transition-transform duration-300`}>
+                      <project.icon className="h-6 w-6" />
+                    </div>
                     
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex}
-                          className="px-3 py-1 bg-secondary/50 text-xs font-medium rounded-full text-foreground"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, techIndex) => (
+                          <span 
+                            key={techIndex}
+                            className="px-3 py-1 bg-secondary/50 text-xs font-medium rounded-full text-foreground"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg">
-            View All Projects
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/projects">
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>

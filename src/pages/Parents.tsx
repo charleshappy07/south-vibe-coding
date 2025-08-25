@@ -257,8 +257,8 @@ const Parents = () => {
             <div className="flex flex-col items-center">
               <Mail className="h-8 w-8 text-primary mb-2" />
               <h3 className="font-semibold mb-1">Email</h3>
-              <a href="mailto:advisor@sphs.edu" className="text-primary hover:underline">
-                advisor@sphs.edu
+              <a href="mailto:contact@southvibecoding.com" className="text-primary hover:underline">
+                contact@southvibecoding.com
               </a>
               <p className="text-xs text-muted-foreground mt-1">Response within 24 hours</p>
             </div>

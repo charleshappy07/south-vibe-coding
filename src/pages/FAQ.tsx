@@ -193,7 +193,7 @@ const FAQ = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild>
-              <a href="mailto:advisor@sphs.edu" className="inline-flex items-center gap-2">
+              <a href="mailto:contact@southvibecoding.com" className="inline-flex items-center gap-2">
                 <Mail className="h-4 w-4" />
                 Email Our Advisor
               </a>

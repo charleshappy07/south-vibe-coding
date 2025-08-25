@@ -145,10 +145,10 @@ const Contact = () => {
                   Best way to reach us for quick questions or detailed inquiries.
                 </p>
                 <a 
-                  href="mailto:advisor@sphs.edu" 
+                  href="mailto:contact@southvibecoding.com" 
                   className="text-primary hover:underline font-medium"
                 >
-                  advisor@sphs.edu
+                  contact@southvibecoding.com
                 </a>
                 <p className="text-sm text-muted-foreground mt-2">
                   Response time: Within 24 hours during school days

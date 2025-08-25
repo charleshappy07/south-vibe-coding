@@ -383,9 +383,9 @@ const Program = () => {
                   Download Syllabus (PDF)
                 </Button>
                 <Button variant="default" size="lg" asChild>
-                  <Link to="/projects">
+                  <Link to="/tools">
                     <Eye className="mr-2 h-5 w-5" />
-                    See Project Examples
+                    View Our Tools
                   </Link>
                 </Button>
               </div>

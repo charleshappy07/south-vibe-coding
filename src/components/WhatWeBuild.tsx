@@ -88,14 +88,6 @@ const WhatWeBuild = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <Button variant="outline" size="lg" asChild>
-            <Link to="/projects">
-              View All Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
   );

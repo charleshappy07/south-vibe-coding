@@ -56,11 +56,6 @@ const Hero = () => {
               </Link>
             </Button>
             <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
-              <Link to="/projects">
-                See Projects
-              </Link>
-            </Button>
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
               <Link to="/vibe">
                 What is Vibe Coding?
                 <ArrowRight className="ml-2 h-5 w-5" />

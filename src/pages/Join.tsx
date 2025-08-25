@@ -219,159 +219,19 @@ const Join = () => {
                   Fill out this form to join South Vibe Coding Club
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                 <form onSubmit={handleSubmit} className="space-y-4">
-                   <div className="space-y-2">
-                     <Label htmlFor="studentName">Student First and Last Name *</Label>
-                     <Input
-                       id="studentName"
-                       value={formData.studentName}
-                       onChange={(e) => setFormData(prev => ({ ...prev, studentName: e.target.value }))}
-                       required
-                     />
-                   </div>
-
-                   <div className="space-y-2">
-                     <Label htmlFor="grade">Grade</Label>
-                     <Select 
-                       value={formData.grade} 
-                       onValueChange={(value) => setFormData(prev => ({ ...prev, grade: value }))}
-                     >
-                       <SelectTrigger>
-                         <SelectValue placeholder="Select grade" />
-                       </SelectTrigger>
-                       <SelectContent>
-                         <SelectItem value="9th Grade">9th Grade</SelectItem>
-                         <SelectItem value="10th Grade">10th Grade</SelectItem>
-                         <SelectItem value="11th Grade">11th Grade</SelectItem>
-                         <SelectItem value="Not in HighSchool">Not in HighSchool</SelectItem>
-                       </SelectContent>
-                     </Select>
-                   </div>
-
-                   <div className="space-y-2">
-                     <Label htmlFor="email">Email *</Label>
-                     <Input
-                       id="email"
-                       type="email"
-                       value={formData.email}
-                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                       required
-                     />
-                   </div>
-
-                   <div className="space-y-2">
-                     <Label htmlFor="phoneNumber">Phone Number</Label>
-                     <Input
-                       id="phoneNumber"
-                       type="tel"
-                       value={formData.phoneNumber}
-                       onChange={(e) => setFormData(prev => ({ ...prev, phoneNumber: e.target.value }))}
-                     />
-                   </div>
-
-                   <div className="space-y-2">
-                     <Label>Interests (select all that apply)</Label>
-                     <div className="space-y-2">
-                       {interests.map((interest) => (
-                         <div key={interest} className="flex items-center space-x-2">
-                           <Checkbox
-                             id={interest}
-                             checked={formData.interests.includes(interest)}
-                             onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
-                           />
-                           <Label htmlFor={interest} className="text-sm">
-                             {interest}
-                           </Label>
-                         </div>
-                       ))}
-                       <div className="flex items-center space-x-2">
-                         <Checkbox
-                           id="Other"
-                           checked={formData.interests.includes("Other")}
-                           onCheckedChange={(checked) => handleInterestChange("Other", checked as boolean)}
-                         />
-                         <Label htmlFor="Other" className="text-sm">
-                           Other
-                         </Label>
-                       </div>
-                       {formData.interests.includes("Other") && (
-                         <div className="ml-6">
-                           <Input
-                             placeholder="Please specify..."
-                             value={formData.otherInterest}
-                             onChange={(e) => setFormData(prev => ({ ...prev, otherInterest: e.target.value }))}
-                           />
-                         </div>
-                       )}
-                     </div>
-                   </div>
-
-                   <div className="space-y-4">
-                     <div className="space-y-2">
-                       <Label className="text-sm font-medium">
-                         I agree to follow the Club's code of conduct and SPHS Policies. *
-                       </Label>
-                       <div className="flex items-center space-x-2">
-                         <Checkbox
-                           id="codeOfConduct"
-                           checked={formData.codeOfConduct}
-                           onCheckedChange={(checked) => setFormData(prev => ({ ...prev, codeOfConduct: checked as boolean }))}
-                           required
-                         />
-                         <Label htmlFor="codeOfConduct" className="text-sm">
-                           Yes
-                         </Label>
-                       </div>
-                     </div>
-
-                     <div className="space-y-2">
-                       <Label className="text-sm font-medium">
-                         I consent to taking my photos and videos for club promotion
-                       </Label>
-                       <div className="space-y-2">
-                         <div className="flex items-center space-x-2">
-                           <Checkbox
-                             id="photoConsentYes"
-                             checked={formData.photoConsent === "yes"}
-                             onCheckedChange={(checked) => {
-                               if (checked) {
-                                 setFormData(prev => ({ ...prev, photoConsent: "yes" }));
-                               }
-                             }}
-                           />
-                           <Label htmlFor="photoConsentYes" className="text-sm">
-                             Yes
-                           </Label>
-                         </div>
-                         <div className="flex items-center space-x-2">
-                           <Checkbox
-                             id="photoConsentNo"
-                             checked={formData.photoConsent === "no"}
-                             onCheckedChange={(checked) => {
-                               if (checked) {
-                                 setFormData(prev => ({ ...prev, photoConsent: "no" }));
-                               }
-                             }}
-                           />
-                           <Label htmlFor="photoConsentNo" className="text-sm">
-                             No
-                           </Label>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-
-                   <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-                     {isLoading ? "Submitting..." : "Apply to Join"}
-                   </Button>
-                   
-                   {validationError && (
-                     <p className="text-red-500 text-sm text-center mt-2">
-                       {validationError}
-                     </p>
-                   )}
-                </form>
+              <CardContent className="p-0">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSdKctTswFCVRsoIc3t9seun1wfYyRhEU5CIhL_CBLC4zIsNjg/viewform?embedded=true" 
+                  width="100%" 
+                  height="1608" 
+                  frameBorder="0" 
+                  marginHeight={0} 
+                  marginWidth={0}
+                  title="South Vibe Coding Club Application Form"
+                  className="rounded-lg"
+                >
+                  Loading…
+                </iframe>
               </CardContent>
             </Card>
           </div>

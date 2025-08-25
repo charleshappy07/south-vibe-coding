@@ -255,7 +255,11 @@ const Vibe = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     Read our complete guidelines for responsible AI use in education
                   </p>
-                  <Button variant="outline" size="sm">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => window.open('/vibe-coding-code-of-conduct.html', '_blank')}
+                  >
                     Download PDF
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>

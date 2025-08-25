@@ -1,0 +1,318 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, Users, Code, Presentation, Clock, MapPin, Mail } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const Join = () => {
+  const [formData, setFormData] = useState({
+    studentName: "",
+    grade: "",
+    schoolEmail: "",
+    parentName: "",
+    parentEmail: "",
+    deviceAccess: "",
+    interests: [] as string[],
+    codeOfConduct: false,
+    photoPermission: false
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const interests = ["Art", "Game Development", "Web Design", "Tools & Apps", "Interactive Stories"];
+
+  const handleInterestChange = (interest: string, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      interests: checked 
+        ? [...prev.interests, interest]
+        : prev.interests.filter(i => i !== interest)
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-16">
+          <div className="max-w-md mx-auto text-center">
+            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+            <h1 className="text-3xl font-bold mb-4">Welcome to Vibe Coding!</h1>
+            <p className="text-muted-foreground mb-6">
+              Thanks for applying! We'll send you a welcome email with next steps soon.
+            </p>
+            <div className="bg-secondary/20 rounded-lg p-4 mb-6">
+              <h3 className="font-semibold mb-2">What's Next:</h3>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Welcome email with Slack/Discord invite</li>
+                <li>• First meeting details</li>
+                <li>• What to bring for Week 1</li>
+              </ul>
+            </div>
+            <Button asChild>
+              <a href="/">Back to Home</a>
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main className="container mx-auto px-4 py-8">
+        {/* Hero */}
+        <section className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
+            Join the Club
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Ready to create with your words? Join South Vibe Coding Club and start building projects that matter.
+          </p>
+        </section>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Info Cards */}
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Users className="h-5 w-5" />
+                  Who It's For
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Grades 9–12, all experience levels welcome. Whether you're a complete beginner 
+                  or already know some coding, we'll meet you where you are.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Code className="h-5 w-5" />
+                  What You'll Do
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>• Publish something in Week 1</li>
+                  <li>• Build games, websites, art, and tools</li>
+                  <li>• Present your work to peers</li>
+                  <li>• Create a real portfolio</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  Meeting Details
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-muted-foreground">
+                  <p><strong>When:</strong> Thursdays, 3:00–4:00 PM</p>
+                  <p><strong>Where:</strong> Room (TBD), South Plantation High School</p>
+                  <p><strong>Cost:</strong> Free for all SPHS students</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Presentation className="h-5 w-5" />
+                  Code of Conduct
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-3">
+                  We're committed to creating an inclusive, respectful, and safe environment for all members.
+                </p>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Be kind and respectful to all members</li>
+                  <li>• Create school-appropriate content</li>
+                  <li>• Follow all SPHS policies</li>
+                  <li>• Zero tolerance for harassment</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Sign Up Form */}
+          <div id="signup">
+            <Card>
+              <CardHeader>
+                <CardTitle>Apply to Join</CardTitle>
+                <CardDescription>
+                  Fill out this form to join South Vibe Coding Club
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="studentName">Student Name</Label>
+                    <Input
+                      id="studentName"
+                      value={formData.studentName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, studentName: e.target.value }))}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="grade">Grade</Label>
+                    <Select 
+                      value={formData.grade} 
+                      onValueChange={(value) => setFormData(prev => ({ ...prev, grade: value }))}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select grade" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="9">9th Grade</SelectItem>
+                        <SelectItem value="10">10th Grade</SelectItem>
+                        <SelectItem value="11">11th Grade</SelectItem>
+                        <SelectItem value="12">12th Grade</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="schoolEmail">School Email</Label>
+                    <Input
+                      id="schoolEmail"
+                      type="email"
+                      value={formData.schoolEmail}
+                      onChange={(e) => setFormData(prev => ({ ...prev, schoolEmail: e.target.value }))}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="parentName">Parent/Guardian Name</Label>
+                    <Input
+                      id="parentName"
+                      value={formData.parentName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, parentName: e.target.value }))}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="parentEmail">Parent/Guardian Email</Label>
+                    <Input
+                      id="parentEmail"
+                      type="email"
+                      value={formData.parentEmail}
+                      onChange={(e) => setFormData(prev => ({ ...prev, parentEmail: e.target.value }))}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label>Device Access</Label>
+                    <Select 
+                      value={formData.deviceAccess} 
+                      onValueChange={(value) => setFormData(prev => ({ ...prev, deviceAccess: value }))}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Do you have access to a device?" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="yes">Yes, I have a laptop/device</SelectItem>
+                        <SelectItem value="no">No, I need to request one</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label>Interests (select all that apply)</Label>
+                    <div className="space-y-2">
+                      {interests.map((interest) => (
+                        <div key={interest} className="flex items-center space-x-2">
+                          <Checkbox
+                            id={interest}
+                            checked={formData.interests.includes(interest)}
+                            onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
+                          />
+                          <Label htmlFor={interest} className="text-sm">
+                            {interest}
+                          </Label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="codeOfConduct"
+                        checked={formData.codeOfConduct}
+                        onCheckedChange={(checked) => setFormData(prev => ({ ...prev, codeOfConduct: checked as boolean }))}
+                        required
+                      />
+                      <Label htmlFor="codeOfConduct" className="text-sm">
+                        I agree to follow the club's code of conduct and school policies
+                      </Label>
+                    </div>
+
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="photoPermission"
+                        checked={formData.photoPermission}
+                        onCheckedChange={(checked) => setFormData(prev => ({ ...prev, photoPermission: checked as boolean }))}
+                      />
+                      <Label htmlFor="photoPermission" className="text-sm">
+                        I consent to photos/videos for club promotion (optional)
+                      </Label>
+                    </div>
+                  </div>
+
+                  <Button type="submit" className="w-full" size="lg">
+                    Apply to Join
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Contact */}
+        <section className="text-center bg-secondary/20 rounded-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">Questions?</h2>
+          <p className="text-muted-foreground mb-4">
+            Reach out to our club advisor with any questions about joining.
+          </p>
+          <Button variant="outline" asChild>
+            <a href="mailto:advisor@sphs.edu" className="inline-flex items-center gap-2">
+              <Mail className="h-4 w-4" />
+              advisor@sphs.edu
+            </a>
+          </Button>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Join;

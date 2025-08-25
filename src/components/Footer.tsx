@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-hero text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Club Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4">South Vibe Coding Club</h3>
@@ -76,19 +76,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CTA */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Ready to Create?</h3>
-            <p className="text-sm text-white/80 mb-4">
-              Join our community of student creators and start building your portfolio today.
-            </p>
-            <Button variant="default" asChild>
-              <Link to="/join">
-                Join the Club
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
 
         {/* Bottom Bar */}

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, ExternalLink, Code, Palette, Gamepad2, BookOpen, Lightbulb, FileText } from "lucide-react";
+import { ArrowRight, ExternalLink, Code, Palette, Gamepad2, BookOpen, Lightbulb } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -44,29 +44,6 @@ const Resources = () => {
     "Design a game where the story changes based on player choices.",
     "Create an interactive resume that tells your story.",
     "Build a random quote generator with your favorite quotes."
-  ];
-
-  const howToGuides = [
-    {
-      title: "Describe → Code: Using AI Without Losing Your Voice",
-      description: "Learn how to give clear prompts while maintaining your creative vision",
-      downloadUrl: "#"
-    },
-    {
-      title: "Debugging with Windsurf/Crusor: Talk to Your Code",
-      description: "Use AI assistants to fix bugs and add features efficiently",
-      downloadUrl: "#"
-    },
-    {
-      title: "Polish: Fonts, Spacing, and Color Without Pain",
-      description: "Quick design tips to make your projects look professional",
-      downloadUrl: "#"
-    },
-    {
-      title: "Git Basics: Save Your Work and Collaborate",
-      description: "Version control fundamentals every coder should know",
-      downloadUrl: "#"
-    }
   ];
 
   const inspirationLinks = [
@@ -162,35 +139,6 @@ const Resources = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* How-To Guides */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <FileText className="h-8 w-8 text-primary" />
-            How-To Guides
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Short, friendly guides designed for beginners — no prior experience needed.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {howToGuides.map((guide, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{guide.title}</CardTitle>
-                  <CardDescription>{guide.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={guide.downloadUrl} className="inline-flex items-center gap-2">
-                      <ArrowRight className="h-4 w-4" />
-                      Download PDF
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </section>
 

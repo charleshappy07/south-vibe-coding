@@ -144,7 +144,7 @@ const Calendar = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Clock className="h-5 w-5" />
-              <span>Thursdays, 3:00–4:00 PM</span>
+              <span>Wednesdays, 3:00–4:00 PM</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />

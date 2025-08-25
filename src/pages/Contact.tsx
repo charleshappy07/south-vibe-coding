@@ -184,7 +184,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div>
                     <p className="font-medium">Club Meetings</p>
-                    <p className="text-muted-foreground">Thursdays, 3:00–4:00 PM</p>
+                    <p className="text-muted-foreground">Wednesdays, 3:00–4:00 PM</p>
                   </div>
                   <div>
                     <p className="font-medium">Office Hours</p>

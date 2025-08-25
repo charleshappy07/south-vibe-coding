@@ -172,7 +172,7 @@ const Join = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>When:</strong> Thursdays, 3:00–4:00 PM</p>
+                  <p><strong>When:</strong> Wednesdays, 3:00–4:00 PM</p>
                   <p><strong>Where:</strong> Room (TBD), South Plantation High School</p>
                   <p><strong>Cost:</strong> Free for all SPHS students</p>
                 </div>

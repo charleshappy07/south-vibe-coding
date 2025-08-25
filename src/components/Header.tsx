@@ -10,6 +10,7 @@ const Header = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
+    { name: "Vibe Coding", href: "/vibe" },
     { name: "Program", href: "/program" },
     { name: "Projects", href: "/projects" },
     { name: "Resources", href: "/resources" },
@@ -30,6 +31,18 @@ const Header = () => {
         const weeksSection = document.getElementById('weeks');
         if (weeksSection) {
           weeksSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    
+    // Special handling for Vibe Coding navigation
+    if (item.name === "Vibe Coding") {
+      if (location.pathname === "/vibe") {
+        e.preventDefault();
+        // Smooth scroll to #what-is section
+        const whatIsSection = document.getElementById('what-is');
+        if (whatIsSection) {
+          whatIsSection.scrollIntoView({ behavior: 'smooth' });
         }
       }
     }
@@ -67,7 +80,10 @@ const Header = () => {
                     : "text-foreground hover:text-primary hover:bg-secondary/50"
                 }`}
                 aria-current={location.pathname === item.href ? "page" : undefined}
-                aria-label={item.name === "Program" ? "Navigate to Program" : undefined}
+                aria-label={
+                  item.name === "Program" ? "Navigate to Program" : 
+                  item.name === "Vibe Coding" ? "Navigate to Vibe Coding" : undefined
+                }
               >
                 {item.name}
               </Link>
@@ -111,7 +127,10 @@ const Header = () => {
                       : "text-foreground hover:text-primary hover:bg-secondary/50"
                   }`}
                   aria-current={location.pathname === item.href ? "page" : undefined}
-                  aria-label={item.name === "Program" ? "Navigate to Program" : undefined}
+                  aria-label={
+                    item.name === "Program" ? "Navigate to Program" : 
+                    item.name === "Vibe Coding" ? "Navigate to Vibe Coding" : undefined
+                  }
                 >
                   {item.name}
                 </Link>

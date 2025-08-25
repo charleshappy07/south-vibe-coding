@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Vibe from "./pages/Vibe";
 import Program from "./pages/Program";
 import Projects from "./pages/Projects";
 import Join from "./pages/Join";
@@ -26,6 +27,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/vibe" element={<Vibe />} />
           <Route path="/program" element={<Program />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/join" element={<Join />} />

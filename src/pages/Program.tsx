@@ -257,7 +257,7 @@ const Program = () => {
 
               <div className="text-white/80">
                 <p className="text-lg font-semibold">Meets Wednesdays, 3:00–4:00 PM</p>
-                <p className="text-sm">Room (TBD) • South Plantation High School</p>
+                <p className="text-sm">Room 145 (Ms. Handlers classroom) • South Plantation High School</p>
               </div>
             </div>
           </div>

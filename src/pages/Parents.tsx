@@ -266,7 +266,7 @@ const Parents = () => {
             <div className="flex flex-col items-center">
               <MapPin className="h-8 w-8 text-primary mb-2" />
               <h3 className="font-semibold mb-1">Location</h3>
-              <p className="text-muted-foreground">Room TBD</p>
+              <p className="text-muted-foreground">Room 145 (Ms. Handlers classroom)</p>
               <p className="text-muted-foreground">South Plantation High School</p>
             </div>
             

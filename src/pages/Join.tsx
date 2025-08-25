@@ -16,10 +16,10 @@ const Join = () => {
     studentName: "",
     grade: "",
     email: "",
-    deviceAccess: "",
+    phoneNumber: "",
     interests: [] as string[],
-    codeOfConduct: false,
-    photoPermission: false
+    otherInterest: "",
+    codeOfConduct: false
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,7 @@ const Join = () => {
   // For admin setup - in production, this would be configured elsewhere
   const webhookUrl = ""; // Admin would configure this Zapier webhook URL
 
-  const interests = ["Art", "Game Development", "Web Design", "Tools & Apps", "Interactive Stories"];
+  const interests = ["Art", "Game Development", "Web Design", "App Development"];
 
   const handleInterestChange = (interest: string, checked: boolean) => {
     setFormData(prev => ({
@@ -210,104 +210,108 @@ const Join = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="studentName">Student Name</Label>
-                    <Input
-                      id="studentName"
-                      value={formData.studentName}
-                      onChange={(e) => setFormData(prev => ({ ...prev, studentName: e.target.value }))}
-                      required
-                    />
-                  </div>
+                 <form onSubmit={handleSubmit} className="space-y-4">
+                   <div className="space-y-2">
+                     <Label htmlFor="studentName">Student First and Last Name</Label>
+                     <Input
+                       id="studentName"
+                       value={formData.studentName}
+                       onChange={(e) => setFormData(prev => ({ ...prev, studentName: e.target.value }))}
+                       required
+                     />
+                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="grade">Grade</Label>
-                    <Select 
-                      value={formData.grade} 
-                      onValueChange={(value) => setFormData(prev => ({ ...prev, grade: value }))}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select grade" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="9">9th Grade</SelectItem>
-                        <SelectItem value="10">10th Grade</SelectItem>
-                        <SelectItem value="11">11th Grade</SelectItem>
-                        <SelectItem value="12">12th Grade</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                   <div className="space-y-2">
+                     <Label htmlFor="grade">Grade</Label>
+                     <Select 
+                       value={formData.grade} 
+                       onValueChange={(value) => setFormData(prev => ({ ...prev, grade: value }))}
+                       required
+                     >
+                       <SelectTrigger>
+                         <SelectValue placeholder="Select grade" />
+                       </SelectTrigger>
+                       <SelectContent>
+                         <SelectItem value="9th Grade">9th Grade</SelectItem>
+                         <SelectItem value="10th Grade">10th Grade</SelectItem>
+                         <SelectItem value="11th Grade">11th Grade</SelectItem>
+                         <SelectItem value="Not in HighSchool">Not in HighSchool</SelectItem>
+                       </SelectContent>
+                     </Select>
+                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                      required
-                    />
-                  </div>
+                   <div className="space-y-2">
+                     <Label htmlFor="email">Email</Label>
+                     <Input
+                       id="email"
+                       type="email"
+                       value={formData.email}
+                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                       required
+                     />
+                   </div>
 
-                  <div className="space-y-2">
-                    <Label>Device Access</Label>
-                    <Select 
-                      value={formData.deviceAccess} 
-                      onValueChange={(value) => setFormData(prev => ({ ...prev, deviceAccess: value }))}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Do you have access to a device?" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="yes">Yes, I have a laptop/device</SelectItem>
-                        <SelectItem value="no">No, I need to request one</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                   <div className="space-y-2">
+                     <Label htmlFor="phoneNumber">Phone Number</Label>
+                     <Input
+                       id="phoneNumber"
+                       type="tel"
+                       value={formData.phoneNumber}
+                       onChange={(e) => setFormData(prev => ({ ...prev, phoneNumber: e.target.value }))}
+                       required
+                     />
+                   </div>
 
-                  <div className="space-y-2">
-                    <Label>Interests (select all that apply)</Label>
-                    <div className="space-y-2">
-                      {interests.map((interest) => (
-                        <div key={interest} className="flex items-center space-x-2">
-                          <Checkbox
-                            id={interest}
-                            checked={formData.interests.includes(interest)}
-                            onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
-                          />
-                          <Label htmlFor={interest} className="text-sm">
-                            {interest}
-                          </Label>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                   <div className="space-y-2">
+                     <Label>Interests (select all that apply)</Label>
+                     <div className="space-y-2">
+                       {interests.map((interest) => (
+                         <div key={interest} className="flex items-center space-x-2">
+                           <Checkbox
+                             id={interest}
+                             checked={formData.interests.includes(interest)}
+                             onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
+                           />
+                           <Label htmlFor={interest} className="text-sm">
+                             {interest}
+                           </Label>
+                         </div>
+                       ))}
+                       <div className="flex items-center space-x-2">
+                         <Checkbox
+                           id="Other"
+                           checked={formData.interests.includes("Other")}
+                           onCheckedChange={(checked) => handleInterestChange("Other", checked as boolean)}
+                         />
+                         <Label htmlFor="Other" className="text-sm">
+                           Other
+                         </Label>
+                       </div>
+                       {formData.interests.includes("Other") && (
+                         <div className="ml-6">
+                           <Input
+                             placeholder="Please specify..."
+                             value={formData.otherInterest}
+                             onChange={(e) => setFormData(prev => ({ ...prev, otherInterest: e.target.value }))}
+                           />
+                         </div>
+                       )}
+                     </div>
+                   </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="codeOfConduct"
-                        checked={formData.codeOfConduct}
-                        onCheckedChange={(checked) => setFormData(prev => ({ ...prev, codeOfConduct: checked as boolean }))}
-                        required
-                      />
-                      <Label htmlFor="codeOfConduct" className="text-sm">
-                        I agree to follow the club's code of conduct and school policies
-                      </Label>
-                    </div>
-
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="photoPermission"
-                        checked={formData.photoPermission}
-                        onCheckedChange={(checked) => setFormData(prev => ({ ...prev, photoPermission: checked as boolean }))}
-                      />
-                      <Label htmlFor="photoPermission" className="text-sm">
-                        I consent to photos/videos for club promotion (optional)
-                      </Label>
-                    </div>
-                  </div>
+                   <div className="space-y-4">
+                     <div className="flex items-center space-x-2">
+                       <Checkbox
+                         id="codeOfConduct"
+                         checked={formData.codeOfConduct}
+                         onCheckedChange={(checked) => setFormData(prev => ({ ...prev, codeOfConduct: checked as boolean }))}
+                         required
+                       />
+                       <Label htmlFor="codeOfConduct" className="text-sm">
+                         I agree to follow the Club's code of conduct and SPHS Policies.
+                       </Label>
+                     </div>
+                   </div>
 
                   <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
                     {isLoading ? "Submitting..." : "Apply to Join"}
@@ -318,33 +322,6 @@ const Join = () => {
           </div>
         </div>
 
-        {/* Google Form */}
-        <section className="mb-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">Join Our Club</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Fill out our official registration form below to secure your spot in South Vibe Coding Club.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-0">
-                <iframe 
-                  src="https://forms.gle/3nGNsf9UsDd5zYf2A"
-                  width="100%" 
-                  height="800" 
-                  frameBorder="0" 
-                  marginHeight={0} 
-                  marginWidth={0}
-                  title="South Vibe Coding Club Registration Form"
-                  className="rounded-lg"
-                >
-                  Loading…
-                </iframe>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         {/* Contact */}
         <section className="text-center bg-secondary/20 rounded-lg p-8">

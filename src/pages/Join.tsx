@@ -318,6 +318,34 @@ const Join = () => {
           </div>
         </div>
 
+        {/* Google Form */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4">Join Our Club</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Fill out our official registration form below to secure your spot in South Vibe Coding Club.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <Card>
+              <CardContent className="p-0">
+                <iframe 
+                  src="https://forms.gle/3nGNsf9UsDd5zYf2A"
+                  width="100%" 
+                  height="800" 
+                  frameBorder="0" 
+                  marginHeight={0} 
+                  marginWidth={0}
+                  title="South Vibe Coding Club Registration Form"
+                  className="rounded-lg"
+                >
+                  Loading…
+                </iframe>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Contact */}
         <section className="text-center bg-secondary/20 rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4">Questions?</h2>

@@ -82,9 +82,11 @@ const Footer = () => {
             <p className="text-sm text-white/80 mb-4">
               Join our community of student creators and start building your portfolio today.
             </p>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
-              Join the Club
-              <ExternalLink className="ml-2 h-4 w-4" />
+            <Button variant="default" asChild>
+              <Link to="/join">
+                Join the Club
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>

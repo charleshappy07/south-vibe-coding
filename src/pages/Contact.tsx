@@ -166,7 +166,7 @@ const Contact = () => {
               <CardContent>
                 <div className="space-y-2">
                   <p className="font-medium">South Plantation High School</p>
-                  <p className="text-muted-foreground">Room 145 (Ms. Handlers classroom)</p>
+                  <p className="text-muted-foreground">Room 145 (Ms. Handler's classroom)</p>
                   <p className="text-muted-foreground">1300 SW 54th Ave</p>
                   <p className="text-muted-foreground">Plantation, FL 33317</p>
                 </div>

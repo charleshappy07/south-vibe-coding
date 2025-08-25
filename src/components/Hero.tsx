@@ -66,7 +66,7 @@ const Hero = () => {
           {/* Meeting Info */}
           <div className="mt-12 text-white/80">
             <p className="text-lg font-semibold">Next Meeting</p>
-            <p className="text-sm">Wednesdays, 3:00–4:00 PM • Room 145 (Ms. Handlers classroom)</p>
+            <p className="text-sm">Wednesdays, 3:00–4:00 PM • Room 145 (Ms. Handler's classroom)</p>
           </div>
         </div>
       </div>

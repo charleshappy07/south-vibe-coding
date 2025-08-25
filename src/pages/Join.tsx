@@ -183,7 +183,7 @@ const Join = () => {
               <CardContent>
                 <div className="space-y-2 text-muted-foreground">
                   <p><strong>When:</strong> Wednesdays, 3:00–4:00 PM</p>
-                  <p><strong>Where:</strong> Room 145 (Ms. Handlers classroom), South Plantation High School</p>
+                  <p><strong>Where:</strong> Room 145 (Ms. Handler's classroom), South Plantation High School</p>
                   <p><strong>Cost:</strong> Free for all SPHS students</p>
                 </div>
               </CardContent>

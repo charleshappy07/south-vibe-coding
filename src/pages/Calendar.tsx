@@ -148,7 +148,7 @@ const Calendar = () => {
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />
-              <span>Room 145 (Ms. Handlers classroom), South Plantation High School</span>
+              <span>Room 145 (Ms. Handler's classroom), South Plantation High School</span>
             </div>
           </div>
 
@@ -243,7 +243,7 @@ const Calendar = () => {
             <CardContent>
               <div className="space-y-2">
                 <p><strong>When:</strong> Tuesdays, 3:00–3:30 PM</p>
-                <p><strong>Where:</strong> Room 145 (Ms. Handlers classroom) (same as club meetings)</p>
+                <p><strong>Where:</strong> Room 145 (Ms. Handler's classroom) (same as club meetings)</p>
                 <p><strong>What to bring:</strong> Your project, questions, and device</p>
               </div>
             </CardContent>

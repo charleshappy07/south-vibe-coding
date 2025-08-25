@@ -19,7 +19,8 @@ const Join = () => {
     phoneNumber: "",
     interests: [] as string[],
     otherInterest: "",
-    codeOfConduct: false
+    codeOfConduct: false,
+    photoConsent: ""
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -300,16 +301,57 @@ const Join = () => {
                    </div>
 
                    <div className="space-y-4">
-                     <div className="flex items-center space-x-2">
-                       <Checkbox
-                         id="codeOfConduct"
-                         checked={formData.codeOfConduct}
-                         onCheckedChange={(checked) => setFormData(prev => ({ ...prev, codeOfConduct: checked as boolean }))}
-                         required
-                       />
-                       <Label htmlFor="codeOfConduct" className="text-sm">
+                     <div className="space-y-2">
+                       <Label className="text-sm font-medium">
                          I agree to follow the Club's code of conduct and SPHS Policies.
                        </Label>
+                       <div className="flex items-center space-x-2">
+                         <Checkbox
+                           id="codeOfConduct"
+                           checked={formData.codeOfConduct}
+                           onCheckedChange={(checked) => setFormData(prev => ({ ...prev, codeOfConduct: checked as boolean }))}
+                           required
+                         />
+                         <Label htmlFor="codeOfConduct" className="text-sm">
+                           Yes
+                         </Label>
+                       </div>
+                     </div>
+
+                     <div className="space-y-2">
+                       <Label className="text-sm font-medium">
+                         I consent to taking my photos and videos for club promotion
+                       </Label>
+                       <div className="space-y-2">
+                         <div className="flex items-center space-x-2">
+                           <Checkbox
+                             id="photoConsentYes"
+                             checked={formData.photoConsent === "yes"}
+                             onCheckedChange={(checked) => {
+                               if (checked) {
+                                 setFormData(prev => ({ ...prev, photoConsent: "yes" }));
+                               }
+                             }}
+                           />
+                           <Label htmlFor="photoConsentYes" className="text-sm">
+                             Yes
+                           </Label>
+                         </div>
+                         <div className="flex items-center space-x-2">
+                           <Checkbox
+                             id="photoConsentNo"
+                             checked={formData.photoConsent === "no"}
+                             onCheckedChange={(checked) => {
+                               if (checked) {
+                                 setFormData(prev => ({ ...prev, photoConsent: "no" }));
+                               }
+                             }}
+                           />
+                           <Label htmlFor="photoConsentNo" className="text-sm">
+                             No
+                           </Label>
+                         </div>
+                       </div>
                      </div>
                    </div>
 

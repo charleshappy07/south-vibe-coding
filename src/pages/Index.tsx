@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ValueTiles from "@/components/ValueTiles";
 import WhatWeBuild from "@/components/WhatWeBuild";
 import Footer from "@/components/Footer";
 
@@ -10,7 +9,6 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <ValueTiles />
         <WhatWeBuild />
       </main>
       <Footer />

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Palette, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import southVibeLogo from "@/assets/south-vibe-logo.png";
 
 const Hero = () => {
@@ -52,12 +53,16 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-              Join the Club
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
+              <Link to="/join#signup">
+                Join the Club
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10">
-              See Projects
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10" asChild>
+              <Link to="/projects">
+                See Projects
+              </Link>
             </Button>
           </div>
 

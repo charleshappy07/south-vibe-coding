@@ -76,8 +76,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="hero" size="sm">
-              Join the Club
+            <Button variant="hero" size="sm" asChild>
+              <Link to="/join#signup">
+                Join the Club
+              </Link>
             </Button>
           </div>
 
@@ -115,8 +117,10 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-2">
-                <Button variant="hero" className="w-full">
-                  Join the Club
+                <Button variant="hero" className="w-full" asChild>
+                  <Link to="/join#signup">
+                    Join the Club
+                  </Link>
                 </Button>
               </div>
             </div>

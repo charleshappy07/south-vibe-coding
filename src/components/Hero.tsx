@@ -19,7 +19,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-slide-up">
           {/* Logo */}
-          <img src={southVibeLogo} alt="South Vibe Logo" className="h-24 w-24 md:h-32 md:w-32 mx-auto mb-8" />
+          <img src={southVibeLogo} alt="South Vibe Logo" className="h-32 w-32 md:h-48 md:w-48 mx-auto mb-8" />
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">

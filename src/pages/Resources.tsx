@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, ExternalLink, Code, Palette, Gamepad2, BookOpen, Lightbulb, FileText } from "lucide-react";
+import { ArrowRight, ExternalLink, Code, Palette, Gamepad2, BookOpen, Lightbulb, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -11,28 +11,28 @@ const Resources = () => {
       title: "Web Starter (Lovable → Replit)",
       description: "Basic website template ready to customize and deploy",
       icon: Code,
-      downloadUrl: "#",
+      downloadUrl: "https://lovable.dev",
       category: "Web"
     },
     {
       title: "p5.js Starter Sketch",
       description: "Interactive art canvas with mouse and keyboard inputs",
       icon: Palette,
-      downloadUrl: "#",
+      downloadUrl: "https://p5js.org/tutorials/get-started/",
       category: "Art"
     },
     {
       title: "Game Starter (JS Boilerplate)",
       description: "Basic game loop with collision detection and scoring",
       icon: Gamepad2,
-      downloadUrl: "#",
+      downloadUrl: "https://www.builder.io/fusion?utm_term=vibe%20coding%20design%20systems&utm_campaign=VibeCoding_NonBrand&utm_source=adwords&utm_medium=ppc&hsa_acc=8119935409&hsa_cam=22901307784&hsa_grp=183514045589&hsa_ad=769493078621&hsa_src=g&hsa_tgt=kwd-2435525053651&hsa_kw=vibe%20coding%20design%20systems&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22901307784&gbraid=0AAAAACUA9YmjaxRZosKKQKaHn_pAZgWYL&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApbEL3JvHPMzRBzkqDPmnOxYCxAXVGVtxqIeKZgZaurhdPjwTVkrhoYaAlqwEALw_wcB",
       category: "Game"
     },
     {
       title: "Story Starter (Twine Map)",
       description: "Branching narrative template with choice mechanics",
       icon: BookOpen,
-      downloadUrl: "#",
+      downloadUrl: "https://twinery.org/",
       category: "Story"
     }
   ];
@@ -132,9 +132,9 @@ const Resources = () => {
                         {kit.category}
                       </span>
                       <Button variant="outline" size="sm" asChild>
-                        <a href={kit.downloadUrl} className="inline-flex items-center gap-2">
-                          <Download className="h-4 w-4" />
-                          Download
+                        <a href={kit.downloadUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+                          <ArrowRight className="h-4 w-4" />
+                          Learn More
                         </a>
                       </Button>
                     </div>
@@ -184,7 +184,7 @@ const Resources = () => {
                 <CardContent>
                   <Button variant="outline" size="sm" asChild>
                     <a href={guide.downloadUrl} className="inline-flex items-center gap-2">
-                      <Download className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" />
                       Download PDF
                     </a>
                   </Button>

@@ -136,17 +136,6 @@ const Calendar = () => {
             </div>
           </div>
 
-          <Button size="lg" asChild>
-            <a 
-              href="https://calendar.google.com/calendar/placeholder" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2"
-            >
-              <CalendarIcon className="h-5 w-5" />
-              Add to Google Calendar
-            </a>
-          </Button>
         </section>
 
         {/* Weekly Sessions */}

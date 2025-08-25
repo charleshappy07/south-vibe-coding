@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Palette, Zap } from "lucide-react";
+import southVibeLogo from "@/assets/south-vibe-logo.png";
 
 const Hero = () => {
   return (
@@ -19,8 +20,7 @@ const Hero = () => {
         <div className="animate-slide-up">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-            <Zap className="h-4 w-4 text-vibe-gold" />
-            <span className="text-sm font-medium text-white">South Plantation High School</span>
+            <img src={southVibeLogo} alt="South Vibe Logo" className="h-6 w-6" />
           </div>
 
           {/* Main Headline */}

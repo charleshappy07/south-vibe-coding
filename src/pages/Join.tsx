@@ -25,6 +25,7 @@ const Join = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [validationError, setValidationError] = useState("");
   
   // For admin setup - in production, this would be configured elsewhere
   const webhookUrl = ""; // Admin would configure this Zapier webhook URL
@@ -42,6 +43,14 @@ const Join = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setValidationError("");
+    
+    // Validate required fields
+    if (!formData.studentName.trim() || !formData.email.trim() || !formData.codeOfConduct) {
+      setValidationError("Error: not all questions answered");
+      return;
+    }
+    
     setIsLoading(true);
 
     // For now, we'll use a simple email service
@@ -213,7 +222,7 @@ const Join = () => {
               <CardContent>
                  <form onSubmit={handleSubmit} className="space-y-4">
                    <div className="space-y-2">
-                     <Label htmlFor="studentName">Student First and Last Name</Label>
+                     <Label htmlFor="studentName">Student First and Last Name *</Label>
                      <Input
                        id="studentName"
                        value={formData.studentName}
@@ -227,7 +236,6 @@ const Join = () => {
                      <Select 
                        value={formData.grade} 
                        onValueChange={(value) => setFormData(prev => ({ ...prev, grade: value }))}
-                       required
                      >
                        <SelectTrigger>
                          <SelectValue placeholder="Select grade" />
@@ -242,7 +250,7 @@ const Join = () => {
                    </div>
 
                    <div className="space-y-2">
-                     <Label htmlFor="email">Email</Label>
+                     <Label htmlFor="email">Email *</Label>
                      <Input
                        id="email"
                        type="email"
@@ -259,7 +267,6 @@ const Join = () => {
                        type="tel"
                        value={formData.phoneNumber}
                        onChange={(e) => setFormData(prev => ({ ...prev, phoneNumber: e.target.value }))}
-                       required
                      />
                    </div>
 
@@ -303,7 +310,7 @@ const Join = () => {
                    <div className="space-y-4">
                      <div className="space-y-2">
                        <Label className="text-sm font-medium">
-                         I agree to follow the Club's code of conduct and SPHS Policies.
+                         I agree to follow the Club's code of conduct and SPHS Policies. *
                        </Label>
                        <div className="flex items-center space-x-2">
                          <Checkbox
@@ -355,9 +362,15 @@ const Join = () => {
                      </div>
                    </div>
 
-                  <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-                    {isLoading ? "Submitting..." : "Apply to Join"}
-                  </Button>
+                   <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
+                     {isLoading ? "Submitting..." : "Apply to Join"}
+                   </Button>
+                   
+                   {validationError && (
+                     <p className="text-red-500 text-sm text-center mt-2">
+                       {validationError}
+                     </p>
+                   )}
                 </form>
               </CardContent>
             </Card>

@@ -273,7 +273,7 @@ const Parents = () => {
             <div className="flex flex-col items-center">
               <Clock className="h-8 w-8 text-primary mb-2" />
               <h3 className="font-semibold mb-1">Meeting Time</h3>
-              <p className="text-muted-foreground">Wednesday</p>
+              <p className="text-muted-foreground">Tuesday</p>
               <p className="text-muted-foreground">3:00–4:00 PM</p>
             </div>
           </div>

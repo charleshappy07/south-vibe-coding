@@ -51,7 +51,7 @@ const FAQ = () => {
     {
       id: "time-commitment",
       question: "What's the time commitment?",
-      answer: "Just one hour per week during our Thursday meetings (3:00-4:00 PM). Optional office hours are available Tuesdays for extra help. We respect your time and other commitments!"
+      answer: "Just one hour per week during our Tuesday meetings (3:00-4:00 PM). Optional office hours are available Tuesdays for extra help. We respect your time and other commitments!"
     },
     {
       id: "final-project",
@@ -73,7 +73,7 @@ const FAQ = () => {
   const quickAnswers = [
     {
       question: "When do you meet?",
-      answer: "Wednesday, 3:00-4:00 PM",
+      answer: "Tuesday, 3:00-4:00 PM",
       icon: Clock
     },
     {

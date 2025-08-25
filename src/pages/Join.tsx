@@ -13,9 +13,7 @@ const Join = () => {
   const [formData, setFormData] = useState({
     studentName: "",
     grade: "",
-    schoolEmail: "",
-    parentName: "",
-    parentEmail: "",
+    email: "",
     deviceAccess: "",
     interests: [] as string[],
     codeOfConduct: false,
@@ -196,33 +194,12 @@ const Join = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="schoolEmail">School Email</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
-                      id="schoolEmail"
+                      id="email"
                       type="email"
-                      value={formData.schoolEmail}
-                      onChange={(e) => setFormData(prev => ({ ...prev, schoolEmail: e.target.value }))}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="parentName">Parent/Guardian Name</Label>
-                    <Input
-                      id="parentName"
-                      value={formData.parentName}
-                      onChange={(e) => setFormData(prev => ({ ...prev, parentName: e.target.value }))}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="parentEmail">Parent/Guardian Email</Label>
-                    <Input
-                      id="parentEmail"
-                      type="email"
-                      value={formData.parentEmail}
-                      onChange={(e) => setFormData(prev => ({ ...prev, parentEmail: e.target.value }))}
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                       required
                     />
                   </div>

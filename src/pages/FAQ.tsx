@@ -73,7 +73,7 @@ const FAQ = () => {
   const quickAnswers = [
     {
       question: "When do you meet?",
-      answer: "Wednesdays, 3:00-4:00 PM",
+      answer: "Wednesday, 3:00-4:00 PM",
       icon: Clock
     },
     {

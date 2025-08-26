@@ -1,12 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Zap, Edit, MessageSquare, Wand2, Palette, Code, Globe, FileText } from "lucide-react";
+import { ExternalLink, Zap, Edit, MessageSquare, Wand2, Palette, Code, Globe, FileText, Bot } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Tools = () => {
   const tools = [
+    {
+      name: "Microsoft Copilot",
+      description: "AI-powered chat assistant that helps with research, writing, and problem-solving. Your personal AI companion for any task.",
+      icon: Bot,
+      category: "AI Assistant",
+      whyWeUse: "Perfect starting point for brainstorming ideas, getting explanations, and planning your projects before you code.",
+      safetyNote: "Use AI responsibly - always fact-check important information and create original content.",
+      url: "https://www.microsoft.com/en-us/microsoft-365-copilot/chat",
+      bestFor: ["Research", "Planning", "Writing Help"]
+    },
     {
       name: "Lovable",
       description: "Turn text prompts into working web prototypes you can customize. Perfect for rapid prototyping and getting ideas into reality fast.",
@@ -89,7 +99,7 @@ const Tools = () => {
     }
   ];
 
-  const categories = ["All", "AI Builder", "AI Editor", "AI IDE", "Generator", "Creative", "Platform", "Storytelling"];
+  const categories = ["All", "AI Assistant", "AI Builder", "AI Editor", "AI IDE", "Generator", "Creative", "Platform", "Storytelling"];
 
   return (
     <div className="min-h-screen bg-background">
@@ -190,9 +200,9 @@ const Tools = () => {
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-1">
+                  <li>• Begin with <strong>Microsoft Copilot</strong> to plan your ideas</li>
                   <li>• Start with <strong>Lovable</strong> for your first website</li>
                   <li>• Use <strong>Replit</strong> to host and share</li>
-                  <li>• Try <strong>p5.js</strong> for simple art sketches</li>
                 </ul>
               </CardContent>
             </Card>

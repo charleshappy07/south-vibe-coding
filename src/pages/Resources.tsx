@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, ExternalLink, Code, Palette, Gamepad2, BookOpen, Lightbulb } from "lucide-react";
+import { ArrowRight, ExternalLink, Code, Palette, Gamepad2, BookOpen, Lightbulb, Bot } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Resources = () => {
   const starterKits = [
+    {
+      title: "Microsoft Copilot",
+      description: "AI-powered chat assistant for research, planning, and brainstorming your projects",
+      icon: Bot,
+      downloadUrl: "https://www.microsoft.com/en-us/microsoft-365-copilot/chat",
+      category: "AI Assistant"
+    },
     {
       title: "Web Starter (Lovable → Replit)",
       description: "Basic website template ready to customize and deploy",

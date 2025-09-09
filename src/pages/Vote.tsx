@@ -71,67 +71,29 @@ const Vote = () => {
 
             <TabsContent value="vote" className="mt-8">
               <div className="space-y-6">
-                {hasVoted ? (
-                  <Card className="text-center p-8">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-green-600">Thank You!</CardTitle>
-                      <CardDescription>
-                        Your vote has been recorded successfully. Check the Results tab to see live updates.
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                ) : (
-                  <>
-                    <div className="grid gap-4">
-                      {candidates.map((candidate) => (
-                        <Card 
-                          key={candidate.id}
-                          className={`cursor-pointer transition-all hover:shadow-md ${
-                            selectedCandidate === candidate.id ? 'ring-2 ring-primary' : ''
-                          }`}
-                          onClick={() => setSelectedCandidate(candidate.id)}
-                        >
-                          <CardContent className="p-6">
-                            <div className="flex items-start gap-4">
-                              <img 
-                                src={candidate.image} 
-                                alt={candidate.name}
-                                className="w-16 h-16 rounded-full object-cover"
-                              />
-                              <div className="flex-1">
-                                <div className="flex items-center gap-2 mb-2">
-                                  <h3 className="text-xl font-semibold">{candidate.name}</h3>
-                                  <Badge variant="secondary">{candidate.position}</Badge>
-                                </div>
-                                <p className="text-muted-foreground">{candidate.bio}</p>
-                              </div>
-                              <div className="flex items-center">
-                                <input 
-                                  type="radio" 
-                                  name="candidate" 
-                                  checked={selectedCandidate === candidate.id}
-                                  onChange={() => setSelectedCandidate(candidate.id)}
-                                  className="w-4 h-4"
-                                />
-                              </div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                    
-                    <div className="text-center">
-                      <Button 
-                        onClick={handleVote}
-                        disabled={!selectedCandidate}
-                        size="lg"
-                        className="px-8"
+                <Card className="text-center p-8">
+                  <CardHeader>
+                    <CardTitle className="text-3xl font-bold mb-4">Vote for Vice President</CardTitle>
+                    <CardDescription className="text-lg leading-relaxed">
+                      Help shape the future of our club! Cast your vote to choose our Vice President, the person who will support leadership, organize events, and represent student voices. Every vote counts—make sure your voice is heard.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <Button 
+                      asChild
+                      size="lg"
+                      className="px-8 py-3 text-lg"
+                    >
+                      <a 
+                        href="https://vote.electionrunner.com/election/A6epK" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                       >
-                        Cast Your Vote
-                      </Button>
-                    </div>
-                  </>
-                )}
+                        Vote Now
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </TabsContent>
 

@@ -98,42 +98,9 @@ const Vote = () => {
             </TabsContent>
 
             <TabsContent value="results" className="mt-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Live Results</CardTitle>
-                  <CardDescription>
-                    Results update in real-time as votes are cast
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {candidates.map((candidate) => (
-                      <div key={candidate.id} className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <img 
-                            src={candidate.image} 
-                            alt={candidate.name}
-                            className="w-10 h-10 rounded-full object-cover"
-                          />
-                          <span className="font-medium">{candidate.name}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-32 bg-secondary rounded-full h-2">
-                            <div 
-                              className="bg-primary h-2 rounded-full transition-all"
-                              style={{ width: '0%' }}
-                            ></div>
-                          </div>
-                          <span className="text-sm text-muted-foreground w-12">0 votes</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 pt-4 border-t text-center text-muted-foreground">
-                    Total votes cast: 0
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Results will be available after the voting period ends.</p>
+              </div>
             </TabsContent>
           </Tabs>
         </div>

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Vibe from "./pages/Vibe";
 import Program from "./pages/Program";
+import Vote from "./pages/Vote";
 
 import Join from "./pages/Join";
 import Resources from "./pages/Resources";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/vibe" element={<Vibe />} />
           <Route path="/program" element={<Program />} />
+          <Route path="/vote" element={<Vote />} />
           
           <Route path="/join" element={<Join />} />
           <Route path="/resources" element={<Resources />} />

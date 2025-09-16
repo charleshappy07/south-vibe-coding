@@ -38,14 +38,14 @@ const Tools = () => {
       bestFor: ["Code Editing", "Refactoring", "Bug Fixes"]
     },
     {
-      name: "Crusor",
-      description: "Pair-programming with AI inside an IDE. Ask questions, get explanations, and code together.",
+      name: "Rosebud",
+      description: "AI-powered game development platform that helps you create games through natural language descriptions.",
       icon: MessageSquare,
       category: "AI IDE",
-      whyWeUse: "Perfect for learning by doing — ask 'why' and 'how' as you build.",
+      whyWeUse: "Perfect for creating games quickly using AI assistance and natural language commands.",
       safetyNote: "Use AI suggestions as learning opportunities, not shortcuts to skip understanding.",
-      url: "https://cursor.sh",
-      bestFor: ["Learning", "Debugging", "Code Review"]
+      url: "https://rosebud.ai/",
+      bestFor: ["Game Development", "AI Assistance", "Rapid Prototyping"]
     },
     {
       name: "Flute",
@@ -216,7 +216,7 @@ const Tools = () => {
                 <ul className="text-sm space-y-1">
                   <li>• Learn <strong>Windsurf</strong> for editing code</li>
                   <li>• Create stories with <strong>Twine</strong></li>
-                  <li>• Use <strong>Crusor</strong> for debugging help</li>
+                  <li>• Use <strong>Rosebud</strong> for game development</li>
                 </ul>
               </CardContent>
             </Card>
